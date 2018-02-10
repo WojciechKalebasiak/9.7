@@ -1,0 +1,6 @@
+body > div {
+	margin-bottom: 30px;
+}
+body > div .label {
+	margin-right: 5px;
+}
