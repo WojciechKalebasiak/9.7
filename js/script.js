@@ -32,6 +32,7 @@ function setGameElements() {
       break;
     case 'ended':
         newGameBtn.innerText = 'Play again';
+        cleanAfterGame();
     case 'notStarted':
     default:
         newGameElem.style.display = 'block';
@@ -56,14 +57,11 @@ function newGame() {
   if (player.name) {
     player.score = computer.score = 0;
     gameState = 'started';
+    setGamePoints();
     setGameElements();
     playerNameElem.innerHTML = player.name;
 
   }
-
-}
-function playerPick(playerPick) {
-    console.log(playerPick);
 
 }
 function getComputerPick() {
@@ -93,6 +91,12 @@ function winGame() {
 		setGameElements();
  }
 }
+ function cleanAfterGame () {
+     playerPickElem.innerHTML="";
+     computerPickElem.innerHTML="";
+     playerResultElem.innerHTML="";
+     computerResultElem.innerHTML="";
+ }
 function checkRoundWinner(playerPick, computerPick) {
   playerResultElem.innerHTML = computerResultElem.innerHTML = '';
 
